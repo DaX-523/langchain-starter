@@ -15,6 +15,8 @@ const model = new ChatMistralAI({
   apiKey: process.env.MISTRAL_API_KEY,
 });
 
+// Manual approach
+
 // model
 //   .invoke([
 //     new HumanMessage({ content: "Hi! I'm Dax" }),
@@ -69,23 +71,6 @@ const config = {
   },
 };
 
-// withMessageHistory
-//   .invoke({ input: "Hello. I am dax" }, config)
-//   .then((response) => {
-//     console.log(response);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
-// withMessageHistory
-//   .invoke({ input: "Who am i?" }, config)
-//   .then((response) => {
-//     console.log(response);
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
-
 async function main() {
   try {
     const response = await withMessageHistory.invoke(
@@ -109,12 +94,21 @@ async function main() {
     );
 
     console.log(followupResponse);
+    // for streaming the response
+
+    // const stream = await withMessageHistory.stream(
+    //   { input: "Hi I am Dax" },
+    //   config
+    // );
+
+    // for await (const chunk of stream) {
+    //   console.log(chunk.content);
+    // }
   } catch (error) {
     console.error("Error:", error);
   }
 }
 
-// Call the main function to run the code
 main();
 
 app.listen(3301, () => console.log("Server is running on port 3301"));
