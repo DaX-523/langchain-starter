@@ -1,0 +1,22 @@
+{
+  "name": "conversational-rag",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@langchain/cohere": "^0.2.0",
+    "@langchain/community": "^0.2.18",
+    "cheerio": "^1.0.0-rc.12",
+    "cohere-ai": "^7.10.6",
+    "express": "^4.19.2",
+    "langchain": "^0.2.9"
+  }
+}
